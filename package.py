@@ -41,14 +41,14 @@ def requires():
     if this.name == "ocio":
         return [
             "glew",
-            "libexpat",
+            # "libexpat",
             "pybind11",
             "imath",
         ]
     elif this.name == "ocio_tools":
         return [
             "glew",
-            "libexpat",
+            # "libexpat",
             "pybind11",
             "imath",
             "lcms",
@@ -61,11 +61,9 @@ def requires():
 private_build_requires = []
 
 variants = [
-    ["python-3.7"],
     ["python-3.9"],
     ["python-3.10"],
     ["python-3.11"],
-    ["python-3.12"],
 ]
 
 
@@ -74,27 +72,22 @@ def commands():
     env.OCIO_ROOT = "{root}"
     env.OCIO_LOCATION = "{root}"
     env.OCIO_INCLUDE_DIR = "{root}/include"
-    env.OCIO_LIBRARY_DIR = "{root}/lib64"
+    env.OCIO_LIBRARY_DIR = "{root}/lib"
 
     env.PATH.append("{root}/bin")
-    env.LD_LIBRARY_PATH.append("{root}/lib64")
+    env.ATH.append("{root}/lib")
 
     if building:
-        env.PKG_CONFIG_PATH.append("{root}/lib64/cmake/OpenColorIO")
+        env.PKG_CONFIG_PATH.append("{root}/lib/cmake/OpenColorIO")
 
     if "python" in resolve:
         python_ver = resolve["python"].version
         if python_ver.major == 3:
-            if python_ver.minor == 7:
-                env.PYTHONPATH.append("{root}/lib64/python3.7/site-packages")
-            elif python_ver.minor == 9:
+            if python_ver.minor == 9:
                 env.PYTHONPATH.append("{root}/lib64/python3.9/site-packages")
             elif python_ver.minor == 10:
                 env.PYTHONPATH.append("{root}/lib64/python3.10/site-packages")
             elif python_ver.minor == 11:
                 env.PYTHONPATH.append("{root}/lib64/python3.11/site-packages")
-            elif python_ver.minor == 12:
-                env.PYTHONPATH.append("{root}/lib64/python3.12/site-packages")
-
 
 uuid = "repository.OpenColorIO"
