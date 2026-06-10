@@ -44,6 +44,7 @@ def requires():
             # "libexpat",
             "pybind11",
             "imath",
+            "visual_studio",
         ]
     elif this.name == "ocio_tools":
         return [
@@ -53,6 +54,7 @@ def requires():
             "imath",
             "lcms",
             "oiio",
+            "visual_studio",
         ]
     else:
         raise ValueError("Wrong package name")
