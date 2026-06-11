@@ -77,7 +77,10 @@ def commands():
     env.OCIO_LIBRARY_DIR = "{root}/lib"
 
     env.PATH.append("{root}/bin")
-    env.ATH.append("{root}/lib")
+    env.PATH.append("{root}/lib")
+    env.PATH.append("{root}/lib")
+    env.PATH.append("{root}/ext/dist/include")
+
 
     if building:
         env.PKG_CONFIG_PATH.append("{root}/lib/cmake/OpenColorIO")
@@ -86,10 +89,13 @@ def commands():
         python_ver = resolve["python"].version
         if python_ver.major == 3:
             if python_ver.minor == 9:
-                env.PYTHONPATH.append("{root}/lib64/python3.9/site-packages")
+                env.PYTHONPATH.append("{root}/python3.9/site-packages")
+                env.PYTHONPATH.append("{root}/python3.9/ext/dist/include")
             elif python_ver.minor == 10:
-                env.PYTHONPATH.append("{root}/lib64/python3.10/site-packages")
+                env.PYTHONPATH.append("{root}/python3.10/site-packages")
+                env.PYTHONPATH.append("{root}/python3.10/ext/dist/include")
             elif python_ver.minor == 11:
-                env.PYTHONPATH.append("{root}/lib64/python3.11/site-packages")
+                env.PYTHONPATH.append("{root}/python3.11/site-packages")
+                env.PYTHONPATH.append("{root}/python3.11/ext/dist/include")
 
 uuid = "repository.OpenColorIO"
