@@ -18,8 +18,8 @@
 ##################################################
 ##################################################
 
-# name = "ocio"
-name = "ocio_tools"
+name = "ocio"
+# name = "ocio_tools"
 
 version = "2.2.1.hh.1.0.0"
 
@@ -40,14 +40,14 @@ def requires():
     if this.name == "ocio":
         return [
             "glew",
-            "libexpat",
+            # "libexpat",
             "pybind11",
             "imath",
         ]
     elif this.name == "ocio_tools":
         return [
             "glew",
-            "libexpat",
+            # "libexpat",
             "pybind11",
             "imath",
             "lcms",
