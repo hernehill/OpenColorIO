@@ -60,11 +60,9 @@ def requires():
 private_build_requires = []
 
 variants = [
-    ["python-3.7"],
     ["python-3.9"],
     ["python-3.10"],
     ["python-3.11"],
-    ["python-3.12"],
 ]
 
 
@@ -73,13 +71,13 @@ def commands():
     env.OCIO_ROOT = "{root}"
     env.OCIO_LOCATION = "{root}"
     env.OCIO_INCLUDE_DIR = "{root}/include"
-    env.OCIO_LIBRARY_DIR = "{root}/lib64"
+    env.OCIO_LIBRARY_DIR = "{root}/lib"
 
     env.PATH.append("{root}/bin")
-    env.LD_LIBRARY_PATH.append("{root}/lib64")
+    env.PATH.append("{root}/lib")
 
     if building:
-        env.CMAKE_MODULE_PATH.append("{root}/lib64/cmake/OpenColorIO")
+        env.CMAKE_MODULE_PATH.append("{root}/lib/cmake/OpenColorIO")
 
     if "python" in resolve:
         python_ver = resolve["python"].version
