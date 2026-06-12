@@ -80,18 +80,7 @@ def commands():
         env.CMAKE_MODULE_PATH.append("{root}/lib/cmake/OpenColorIO")
 
     if "python" in resolve:
-        python_ver = resolve["python"].version
-        if python_ver.major == 3:
-            if python_ver.minor == 7:
-                env.PYTHONPATH.append("{root}/lib64/python3.7/site-packages")
-            elif python_ver.minor == 9:
-                env.PYTHONPATH.append("{root}/lib64/python3.9/site-packages")
-            elif python_ver.minor == 10:
-                env.PYTHONPATH.append("{root}/lib64/python3.10/site-packages")
-            elif python_ver.minor == 11:
-                env.PYTHONPATH.append("{root}/lib64/python3.11/site-packages")
-            elif python_ver.minor == 12:
-                env.PYTHONPATH.append("{root}/lib64/python3.12/site-packages")
+        env.PYTHONPATH.append("{root}/lib/site-packages")
 
 
 uuid = "repository.OpenColorIO"
