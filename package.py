@@ -86,16 +86,6 @@ def commands():
         env.PKG_CONFIG_PATH.append("{root}/lib/cmake/OpenColorIO")
 
     if "python" in resolve:
-        python_ver = resolve["python"].version
-        if python_ver.major == 3:
-            if python_ver.minor == 9:
-                env.PYTHONPATH.append("{root}/python3.9/site-packages")
-                env.PYTHONPATH.append("{root}/python3.9/ext/dist/include")
-            elif python_ver.minor == 10:
-                env.PYTHONPATH.append("{root}/python3.10/site-packages")
-                env.PYTHONPATH.append("{root}/python3.10/ext/dist/include")
-            elif python_ver.minor == 11:
-                env.PYTHONPATH.append("{root}/python3.11/site-packages")
-                env.PYTHONPATH.append("{root}/python3.11/ext/dist/include")
+        env.PYTHONPATH.append("{root}/lib/site-packages")
 
 uuid = "repository.OpenColorIO"
