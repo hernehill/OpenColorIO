@@ -86,6 +86,6 @@ def commands():
         env.PKG_CONFIG_PATH.append("{root}/lib/cmake/OpenColorIO")
 
     if "python" in resolve:
-        env.PYTHONPATH.append("{root}/lib/site-packages")
+        env.PYTHONPATH.append("{root}/lib/site-packages/PyOpenColorIO")
 
 uuid = "repository.OpenColorIO"
