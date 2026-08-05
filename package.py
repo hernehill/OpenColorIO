@@ -57,7 +57,7 @@ def requires():
         raise ValueError("Wrong package name")
 
 
-private_build_requires = []
+private_build_requires = ["visual_studio"]
 
 variants = [
     ["python-3.9"],

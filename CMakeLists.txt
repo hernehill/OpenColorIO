@@ -128,7 +128,7 @@ set(HH_USE_OIIO ON)
 endif()
 #############################################
 
-option(BUILD_SHARED_LIBS "Set to OFF to build static libraries" ON)
+option(BUILD_SHARED_LIBS "Set to OFF to build static libraries" ON) # Terra: was ON
 option(OCIO_BUILD_APPS "Set to OFF to disable command-line apps" ${HH_USE_OIIO})  # Marcelo: was ON
 option(OCIO_BUILD_OPENFX "Specify whether to build OpenFX plugins" OFF)
 option(OCIO_BUILD_NUKE "Specify whether to build nuke plugins" OFF)
