@@ -18,8 +18,8 @@
 ##################################################
 ##################################################
 
-name = "ocio"
-# name = "ocio_tools"
+# name = "ocio"
+name = "ocio_tools"
 
 version = "2.1.3.hh.1.0.0"
 
@@ -50,7 +50,7 @@ def requires():
             # "libexpat",
             "pybind11",
             "imath",
-            "lcms",
+            # "lcms",
             "oiio",
         ]
     else:
