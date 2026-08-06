@@ -52,6 +52,7 @@ def requires():
             "imath",
             # "lcms",
             "oiio",
+            "zlib",
         ]
     else:
         raise ValueError("Wrong package name")

@@ -269,6 +269,14 @@ if(NOT minizip-ng_FOUND AND OCIO_INSTALL_EXT_PACKAGES AND NOT OCIO_INSTALL_EXT_P
     # Hack to let imported target be built from ExternalProject_Add
     file(MAKE_DIRECTORY ${minizip-ng_INCLUDE_DIR})
 
+    # ZLIB_install only exists when ZLIB itself is being built from source.
+    # When ZLIB is provided externally (e.g. a system or rez package) the target
+    # is absent, so guard the DEPENDS to avoid a CMake configure-time error.
+    set(_minizip-ng_ZLIB_DEPENDS "")
+    if(TARGET ZLIB_install)
+        set(_minizip-ng_ZLIB_DEPENDS DEPENDS ZLIB_install)
+    endif()
+
     ExternalProject_Add(minizip-ng_install
         GIT_REPOSITORY "https://github.com/zlib-ng/minizip-ng.git"
         GIT_TAG "${minizip-ng_VERSION}"
@@ -284,10 +292,13 @@ if(NOT minizip-ng_FOUND AND OCIO_INSTALL_EXT_PACKAGES AND NOT OCIO_INSTALL_EXT_P
                             --config ${CMAKE_BUILD_TYPE}
                             --target install
                             --parallel
-        DEPENDS ZLIB_install
+        ${_minizip-ng_ZLIB_DEPENDS}
     )
 
     add_dependencies(MINIZIP::minizip-ng minizip-ng_install ZLIB_install)
+    if(TARGET ZLIB_install)
+        add_dependencies(minizip-ng_install ZLIB_install)
+    endif()
     message(STATUS "Installing minizip-ng: ${minizip-ng_LIBRARY} (version \"${minizip-ng_VERSION}\")")
 endif()
 
