@@ -21,7 +21,7 @@
 name = "ocio"
 # name = "ocio_tools"
 
-version = "2.1.3.hh.1.0.0"
+version = "2.1.3.hh.1.0.1"
 
 authors = [
     "AcademySoftwareFoundation",
