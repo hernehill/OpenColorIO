@@ -22,7 +22,7 @@
 name = "ocio"
 # name = "ocio_tools"
 
-version = "2.3.2.hh.1.0.0"
+version = "2.3.2.hh.1.0.1"
 
 authors = [
     "Sony Pictures Imageworks & AcademySoftwareFoundation",
