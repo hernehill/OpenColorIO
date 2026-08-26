@@ -82,6 +82,7 @@ def commands():
 
     if "python" in resolve:
         env.PYTHONPATH.append("{root}/lib/site-packages")
+        env.UE_PYTHONPATH.append("{root}/lib/site-packages")
 
 
 uuid = "repository.OpenColorIO"
