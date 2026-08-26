@@ -86,14 +86,19 @@ def commands():
         if python_ver.major == 3:
             if python_ver.minor == 7:
                 env.PYTHONPATH.append("{root}/lib64/python3.7/site-packages")
+                env.UE_PYTHONPATH.append("{root}/lib64/python3.7/site-packages")
             elif python_ver.minor == 9:
                 env.PYTHONPATH.append("{root}/lib64/python3.9/site-packages")
+                env.UE_PYTHONPATH.append("{root}/lib64/python3.9/site-packages")
             elif python_ver.minor == 10:
                 env.PYTHONPATH.append("{root}/lib64/python3.10/site-packages")
+                env.UE_PYTHONPATH.append("{root}/lib64/python3.10/site-packages")
             elif python_ver.minor == 11:
                 env.PYTHONPATH.append("{root}/lib64/python3.11/site-packages")
+                env.UE_PYTHONPATH.append("{root}/lib64/python3.11/site-packages")
             elif python_ver.minor == 12:
                 env.PYTHONPATH.append("{root}/lib64/python3.12/site-packages")
+                env.UE_PYTHONPATH.append("{root}/lib64/python3.12/site-packages")
 
 
 uuid = "repository.OpenColorIO"
