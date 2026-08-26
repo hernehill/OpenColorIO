@@ -78,7 +78,6 @@ def commands():
 
     env.PATH.append("{root}/bin")
     env.PATH.append("{root}/lib")
-    env.PATH.append("{root}/lib")
     env.PATH.append("{root}/ext/dist/include")
 
 
@@ -87,5 +86,6 @@ def commands():
 
     if "python" in resolve:
         env.PYTHONPATH.append("{root}/lib/site-packages/PyOpenColorIO")
+        env.UE_PYTHONPATH.append("{root}/lib/site-packages/PyOpenColorIO")
 
 uuid = "repository.OpenColorIO"
