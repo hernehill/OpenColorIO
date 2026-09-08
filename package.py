@@ -76,6 +76,9 @@ def commands():
     env.OCIO_INCLUDE_DIR = "{root}/include"
     env.OCIO_LIBRARY_DIR = "{root}/lib"
 
+    env.LD_LIBRARY_PATH.append("{root}/bin")
+    env.LD_LIBRARY_PATH.append("{root}/lib/site-packages")
+    # Require dlls to be found in PATH for Maya to load the plugin.
     env.PATH.append("{root}/bin")
     env.PATH.append("{root}/lib")
     env.PATH.append("{root}/ext/dist/include")
