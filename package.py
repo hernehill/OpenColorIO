@@ -22,7 +22,7 @@
 name = "ocio"
 # name = "ocio_tools"
 
-version = "2.3.2.hh.1.0.1"
+version = "2.3.2.hh.1.0.2"
 
 authors = [
     "Sony Pictures Imageworks & AcademySoftwareFoundation",
@@ -44,7 +44,6 @@ def requires():
             # "libexpat",
             "pybind11",
             "imath",
-            "visual_studio",
         ]
     elif this.name == "ocio_tools":
         return [
@@ -54,13 +53,12 @@ def requires():
             "imath",
             "lcms",
             "oiio",
-            "visual_studio",
         ]
     else:
         raise ValueError("Wrong package name")
 
 
-private_build_requires = []
+private_build_requires = ["visual_studio"]
 
 variants = [
     ["python-3.9"],
