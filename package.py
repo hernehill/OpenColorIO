@@ -48,7 +48,7 @@ def requires():
             "libexpat",
             "pybind11",
             "imath",
-            "lcms",
+            # "lcms",
             "oiio",
         ]
     else:
