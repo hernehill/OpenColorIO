@@ -13,3 +13,8 @@ mastercopy
 .vscode
 
 src/apps/ocioview/poetry.lock
+
+# HH
+_rez_build
+.vscode
+.idea
